@@ -6,6 +6,28 @@ namespace AoC2020
 {
     public static class PasswordValidator
     {
+        public static int CountValidPasswordsNew(string[] inputs)
+        {
+            int count = 0;
+
+            foreach (string input in inputs)
+            {
+                int index1 = int.MaxValue;
+                int index2 = int.MinValue;
+                char key = '-';
+                string password = string.Empty;
+
+                ParseInput(input, out index1, out index2, out key, out password);
+
+                if (ValidatePasswordNew(index1, index2, key, password))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
         public static int CountValidPasswords(string[] inputs)
         {
             int count = 0;
@@ -26,6 +48,11 @@ namespace AoC2020
             }
 
             return count;
+        }
+
+        private static bool ValidatePasswordNew(int index1, int index2, char key, string password)
+        {
+            return (password[index1 - 1] == key) != (password[index2 - 1] == key);
         }
 
         private static bool ValidatePassword(int min, int max, char key, string password)
