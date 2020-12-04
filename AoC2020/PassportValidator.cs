@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -52,13 +53,88 @@ namespace AoC2020
 
             foreach(KeyValuePair<string,string> kvp in requiredKeys)
             {
-                if (!passport.ContainsKey(kvp.Key))
+                if (!passport.ContainsKey(kvp.Key) || !ValidateFieldContents(kvp.Key, passport[kvp.Key]))
                 {
                     return false;
                 }
             }
 
             return true;
+        }
+
+        private bool ValidateFieldContents(string key, string value)
+        {
+            switch (key)
+            {
+                case "byr": return ValidateYear(value, 1920, 2002);
+                case "iyr": return ValidateYear(value, 2010, 2020);
+                case "eyr": return ValidateYear(value, 2020, 2030);
+                case "hgt": return ValidateHeight(value, 150, 193, 59, 76);
+                case "hcl": return ValidateHexCode(value);
+                case "ecl": return ValidateColorName(value);
+                case "pid": return ValidNumber(value, 9);
+                case "cid": return true;
+                default: return false;
+            }
+        }
+
+        private bool ValidNumber(string value, int length)
+        {
+            if(value.Length < length || value.Length > length)
+            {
+                return false;
+            }
+
+            return Regex.IsMatch(value, "[0-9]+");
+        }
+
+        private bool ValidateColorName(string value)
+        {
+            string[] valids = new string[] { "amb", "blu", "brn", "gry", "grn", "hzl", "oth" };
+
+            return valids.Contains(value);
+        }
+
+        private bool ValidateHexCode(string value)
+        {
+            return Regex.IsMatch(value, "#[a-f0-9]{6}");
+        }
+
+        private bool ValidateHeight(string value, int minCM, int maxCM, int minIN, int maxIN)
+        {
+            if(value.Length <= 2)
+            {
+                return false;
+            }
+
+            if(value.EndsWith("cm"))
+            {
+                value = value.Substring(0, value.Length - 2);
+                int val = Convert.ToInt32(value);
+
+                return val >= minCM && val <= maxCM;
+            }
+            else if (value.EndsWith("in"))
+            {
+                value = value.Substring(0, value.Length - 2);
+                int val = Convert.ToInt32(value);
+
+                return val >= minIN && val <= maxIN;
+            }
+
+            return false;
+        }
+
+        private bool ValidateYear(string value, int min, int max)
+        {
+            if(value.Length < 4 || value.Length > 4)
+            {
+                return false;
+            }
+
+            int val = Convert.ToInt32(value);
+
+            return val >= min && val <= max;
         }
 
         private List<Dictionary<string, string>> ParsePassports(string[] inputs)

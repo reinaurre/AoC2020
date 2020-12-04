@@ -33,19 +33,17 @@ namespace AoC2020
             //Day3Part2();
 
             Console.WriteLine();
-            Console.WriteLine("Day 4 Part 1:");
-            Day4Part1();
-
-            //Console.WriteLine();
-            //Console.WriteLine("Day 4 Part 2:");
-            //Day4Part2();
+            Console.WriteLine("Day 4:");
+            Day4();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }
 
-        public static void Day4Part1()
+        // Answer A = 260
+        // Answer B = 153
+        public static void Day4()
         {
             Console.WriteLine("Parsing Input...");
             string[] input = File.ReadAllLines("Inputs/Day4A.txt");
