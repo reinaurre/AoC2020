@@ -24,17 +24,37 @@ namespace AoC2020
             //Console.WriteLine("Day 2 Part 2:");
             //Day2Part2();
 
-            Console.WriteLine();
-            Console.WriteLine("Day 3 Part 1:");
-            Day3Part1();
+            //Console.WriteLine();
+            //Console.WriteLine("Day 3 Part 1:");
+            //Day3Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 3 Part 2:");
+            //Day3Part2();
 
             Console.WriteLine();
-            Console.WriteLine("Day 3 Part 2:");
-            Day3Part2();
+            Console.WriteLine("Day 4 Part 1:");
+            Day4Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 4 Part 2:");
+            //Day4Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        public static void Day4Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] input = File.ReadAllLines("Inputs/Day4A.txt");
+
+            PassportValidator pv = new PassportValidator(new string[] { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" }, new string[] { "cid" });
+            int output = pv.CountValidPassports(input);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 958815792
