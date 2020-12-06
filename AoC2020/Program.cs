@@ -40,13 +40,45 @@ namespace AoC2020
             //Console.WriteLine("Day 5 Part 1:");
             //Day5Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 5 Part 2:");
+            //Day5Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 6 Part 1:");
+            //Day6Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 5 Part 2:");
-            Day5Part2();
+            Console.WriteLine("Day 6 Part 2:");
+            Day6Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 3219
+        public static void Day6Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day6A.txt");
+
+            int output = AnswerChecker.CountUnanimousGroupAnswers(inputs);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 6596
+        public static void Day6Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day6A.txt");
+
+            int output = AnswerChecker.CountGroupAnswers(inputs);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         public static void Day5Part2()
