@@ -32,13 +32,48 @@ namespace AoC2020
             //Console.WriteLine("Day 3 Part 2:");
             //Day3Part2();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 4:");
+            //Day4();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 5 Part 1:");
+            //Day5Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 4:");
-            Day4();
+            Console.WriteLine("Day 5 Part 2:");
+            Day5Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        public static void Day5Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day5A.txt");
+
+            SeatFinder sf = new SeatFinder();
+            sf.FindHighestID(inputs, 127, 7);
+            int output = sf.FindMySeat();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Find highest seat ID
+        // Answer = 806
+        public static void Day5Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day5A.txt");
+
+            SeatFinder sf = new SeatFinder();
+            int output = sf.FindHighestID(inputs, 127, 7);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer A = 260
