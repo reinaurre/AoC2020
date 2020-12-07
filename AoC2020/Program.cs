@@ -48,13 +48,49 @@ namespace AoC2020
             //Console.WriteLine("Day 6 Part 1:");
             //Day6Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 6 Part 2:");
+            //Day6Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 7 Part 1:");
+            //Day7Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 6 Part 2:");
-            Day6Part2();
+            Console.WriteLine("Day 7 Part 2:");
+            Day7Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 
+        public static void Day7Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day7A.txt");
+
+            BagPacker bp = new BagPacker();
+            bp.ParseRules(inputs);
+            int output = bp.GetTotalContents("shiny gold");
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 101
+        public static void Day7Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day7A.txt");
+
+            BagPacker bp = new BagPacker();
+            bp.ParseRules(inputs);
+            int output = bp.CountAncestors("shiny gold");
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 3219
