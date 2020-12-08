@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AoC2020.Computer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -56,16 +57,51 @@ namespace AoC2020
             //Console.WriteLine("Day 7 Part 1:");
             //Day7Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 7 Part 2:");
+            //Day7Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 8 Part 1:");
+            //Day8Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 7 Part 2:");
-            Day7Part2();
+            Console.WriteLine("Day 8 Part 2:");
+            Day8Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }
 
-        // Answer = 
+        // Answer = 1235
+        public static void Day8Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day8A.txt");
+
+            BootCodeRunner bcr = new BootCodeRunner(inputs);
+            bcr.FixCorruption();
+            int output = bcr.ExecuteCode();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 1859
+        public static void Day8Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day8A.txt");
+
+            BootCodeRunner bcr = new BootCodeRunner(inputs);
+            int output = bcr.ExecuteCode_BreakOnLoop();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 108636
         public static void Day7Part2()
         {
             Console.WriteLine("Parsing Input...");
