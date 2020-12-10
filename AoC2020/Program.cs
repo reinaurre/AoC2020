@@ -65,13 +65,106 @@ namespace AoC2020
             //Console.WriteLine("Day 8 Part 1:");
             //Day8Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 8 Part 2:");
+            //Day8Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 9 Part 1:");
+            //Day9Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 9 Part 2:");
+            //Day9Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 10 Part 1:");
+            //Day10Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 8 Part 2:");
-            Day8Part2();
+            Console.WriteLine("Day 10 Part 2:");
+            Day10Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 453551299002368
+        public static void Day10Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day10A.txt");
+
+            List<int> inputNums = new List<int>();
+            foreach (string str in inputs)
+            {
+                inputNums.Add(Convert.ToInt32(str));
+            }
+
+            JoltageAdapter ja = new JoltageAdapter(inputNums);
+            long output = ja.CountCombinations();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 2432
+        public static void Day10Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day10A.txt");
+
+            List<int> inputNums = new List<int>();
+            foreach (string str in inputs)
+            {
+                inputNums.Add(Convert.ToInt32(str));
+            }
+
+            JoltageAdapter ja = new JoltageAdapter(inputNums);
+            int output = ja.DiffProduct(3);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 51152360
+        public static void Day9Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day9A.txt");
+
+            List<long> inputNums = new List<long>();
+            foreach (string str in inputs)
+            {
+                inputNums.Add(Convert.ToInt64(str));
+            }
+
+            XMAScracker xc = new XMAScracker();
+            xc.FindRuleBreaker(25, inputNums.ToArray());
+            long output = xc.FindWeakness();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 373803594
+        public static void Day9Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day9A.txt");
+
+            List<long> inputNums = new List<long>();
+            foreach(string str in inputs)
+            {
+                inputNums.Add(Convert.ToInt64(str));
+            }
+
+            XMAScracker xc = new XMAScracker();
+            long output = xc.FindRuleBreaker(25, inputNums.ToArray());
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 1235
