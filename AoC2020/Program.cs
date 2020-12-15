@@ -1,4 +1,7 @@
 ﻿using AoC2020.Computer;
+using AoC2020.Navigation;
+using AoC2020.NewFolder;
+using AoC2020.Seating;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -81,13 +84,211 @@ namespace AoC2020
             //Console.WriteLine("Day 10 Part 1:");
             //Day10Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 10 Part 2:");
+            //Day10Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 11 Part 1:");
+            //Day11Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 11 Part 2:");
+            //Day11Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 12 Part 1:");
+            //Day12Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 12 Part 2:");
+            //Day12Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 13 Part 1:");
+            //Day13Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 13 Part 2:");
+            //Day13Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 14 Part 1:");
+            //Day14Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 14 Part 2:");
+            //Day14Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 15 Part 1:");
+            //Day15Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 10 Part 2:");
-            Day10Part2();
+            Console.WriteLine("Day 15 Part 2:");
+            Day15Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 
+        public static void Day15Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day15A.txt");
+
+            inputs = inputs[0].Split(',');
+            int[] values = new int[inputs.Length];
+
+            for (int i = 0; i < inputs.Length; i++)
+            {
+                values[i] = int.Parse(inputs[i]);
+            }
+
+            MemoryGame mg = new MemoryGame(values);
+            int output = mg.GetNumberAt(30000000);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 234
+        public static void Day15Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day15A.txt");
+
+            inputs = inputs[0].Split(',');
+            int[] values = new int[inputs.Length];
+
+            for(int i = 0; i < inputs.Length; i++)
+            {
+                values[i] = int.Parse(inputs[i]);
+            }
+
+            MemoryGame mg = new MemoryGame(values);
+            int output = mg.GetNumberAt(2020);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 4200656704538
+        public static void Day14Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day14A.txt");
+
+            BitmaskMemory bm = new BitmaskMemory(inputs);
+            bm.RunV2();
+            long output = bm.GetMemorySum();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 7440382076205
+        public static void Day14Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day14A.txt");
+
+            BitmaskMemory bm = new BitmaskMemory(inputs);
+            bm.Run();
+            long output = bm.GetMemorySum();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 
+        public static void Day13Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day13A.txt");
+
+            int startTime = Convert.ToInt32(inputs[0]);
+            string[] schedule = inputs[1].Split(',');
+
+            //long output = BusScheduler.FindEarliestSequence(schedule);
+            ulong output = BusScheduler.FindSequentialTimestamp(schedule);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 5257
+        public static void Day13Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day13A.txt");
+
+            int startTime = Convert.ToInt32(inputs[0]);
+            string[] schedule = inputs[1].Split(',');
+
+            int output = BusScheduler.FindEarliestBusProduct(startTime, schedule);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 51249
+        public static void Day12Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day12A.txt");
+
+            ShipNavigation sn = new ShipNavigation(0, 0, inputs, 10, 1);
+            sn.NavigateWaypoint();
+            int output = sn.GetManhattanDistance();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 757
+        public static void Day12Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day12A.txt");
+
+            ShipNavigation sn = new ShipNavigation(0, 0, inputs);
+            sn.Navigate();
+            int output = sn.GetManhattanDistance();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // ******** NOT SOLVED *******
+        // Answer = 
+        public static void Day11Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day11B.txt");
+
+            SeatingSystem ss = new SeatingSystem(inputs);
+            ss.RunGameOfLife(true);
+            int output = ss.GetOccupiedCount();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 2178
+        public static void Day11Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day11A.txt");
+
+            SeatingSystem ss = new SeatingSystem(inputs);
+            ss.RunGameOfLife();
+            int output = ss.GetOccupiedCount();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 453551299002368

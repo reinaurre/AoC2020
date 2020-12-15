@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2020", "AoC2020.csproj", "{EC858ADB-F66C-4F31-A600-5123227AE233}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AoC2020", "AoC2020.csproj", "{EC858ADB-F66C-4F31-A600-5123227AE233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\Utilities\Utilities.csproj", "{1FAC2065-0F83-44DC-B4A4-539CCBC76395}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EC858ADB-F66C-4F31-A600-5123227AE233}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC858ADB-F66C-4F31-A600-5123227AE233}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC858ADB-F66C-4F31-A600-5123227AE233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FAC2065-0F83-44DC-B4A4-539CCBC76395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAC2065-0F83-44DC-B4A4-539CCBC76395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAC2065-0F83-44DC-B4A4-539CCBC76395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAC2065-0F83-44DC-B4A4-539CCBC76395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
