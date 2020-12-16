@@ -124,13 +124,49 @@ namespace AoC2020
             //Console.WriteLine("Day 15 Part 1:");
             //Day15Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 15 Part 2:");
+            //Day15Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 16 Part 1:");
+            //Day16Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 15 Part 2:");
-            Day15Part2();
+            Console.WriteLine("Day 16 Part 2:");
+            Day16Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 
+        public static void Day16Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day16A.txt");
+
+            TicketScanner ts = new TicketScanner(inputs);
+            ts.FindScanningErrorRate(true);
+            ts.IdentifyFields();
+            long output = ts.GetDepartureProduct();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 26988
+        public static void Day16Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day16A.txt");
+
+            TicketScanner ts = new TicketScanner(inputs);
+            int output = ts.FindScanningErrorRate();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 
