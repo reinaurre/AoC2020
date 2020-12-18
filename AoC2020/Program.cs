@@ -1,4 +1,6 @@
 ﻿using AoC2020.Computer;
+using AoC2020.ConwayCubes;
+using AoC2020.Maths;
 using AoC2020.Navigation;
 using AoC2020.NewFolder;
 using AoC2020.Seating;
@@ -132,13 +134,93 @@ namespace AoC2020
             //Console.WriteLine("Day 16 Part 1:");
             //Day16Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 16 Part 2:");
+            //Day16Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 17 Part 1:");
+            //Day17Part1();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 17 Part 2:");
+            //Day17Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 18 Part 1:");
+            //Day18Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 16 Part 2:");
-            Day16Part2();
+            Console.WriteLine("Day 18 Part 2:");
+            Day18Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 
+        public static void Day18Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day18A.txt");
+
+            long output = 0;
+            foreach (string input in inputs)
+            {
+                output += Calculator.EvaluateExpression(Calculator.ConvertForPart2(input));
+            }
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 30753705453324
+        public static void Day18Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day18A.txt");
+
+            long output = 0;
+            foreach(string input in inputs)
+            {
+                output += Calculator.EvaluateExpression(input);
+            }
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 
+        public static void Day17Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day17A.txt");
+
+            BootSystemStolen bss = new BootSystemStolen(inputs, true);
+
+            BootSystem bs = new BootSystem(inputs);
+            bs.RunBootSequence(6);
+            int output = bs.GetActiveCount();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 
+        public static void Day17Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day17A.txt");
+
+            BootSystemStolen bss = new BootSystemStolen(inputs);
+
+            BootSystem bs = new BootSystem(inputs);
+            bs.RunBootSequence(6);
+            int output = bs.GetActiveCount();
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 

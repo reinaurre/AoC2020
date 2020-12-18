@@ -8,7 +8,6 @@ namespace AoC2020.Navigation
     public class ShipNavigation
     {
         private Coordinate startPosition;
-        private Coordinate endPosition;
         private List<Coordinate> coordinates;
         private List<Action> actions;
         private Ship ship;
