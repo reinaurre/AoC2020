@@ -150,13 +150,47 @@ namespace AoC2020
             //Console.WriteLine("Day 18 Part 1:");
             //Day18Part1();
 
+            //Console.WriteLine();
+            //Console.WriteLine("Day 18 Part 2:");
+            //Day18Part2();
+
+            //Console.WriteLine();
+            //Console.WriteLine("Day 19 Part 1:");
+            //Day19Part1();
+
             Console.WriteLine();
-            Console.WriteLine("Day 18 Part 2:");
-            Day18Part2();
+            Console.WriteLine("Day 19 Part 2:");
+            Day19Part2();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
+        }
+
+        // Answer = 
+        public static void Day19Part2()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day19A.txt");
+
+            SatelliteMessaging2 sm = new SatelliteMessaging2();
+            int output = sm.GetRuleZeroMatches(inputs);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
+        }
+
+        // Answer = 184
+        public static void Day19Part1()
+        {
+            Console.WriteLine("Parsing Input...");
+            string[] inputs = File.ReadAllLines("Inputs/Day19A.txt");
+
+            SatelitteMessaging sm = new SatelitteMessaging();
+            int output = sm.GetRuleZeroMatches(inputs);
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine(output);
         }
 
         // Answer = 
